@@ -4,10 +4,6 @@ gpustat==1.1
 hydra-core==1.1.1
 higher==0.2.1
 importlib-metadata==6.3.0
-matplotlib==3.5.1
-nltk==3.6.5
-numpy==1.22.1
-omegaconf==2.1.1
 pandas==1.4.0
 PyYAML==6.0
 scikit-learn==1.0.2
