@@ -2,4 +2,5 @@
 from .counterfact import CounterFactDataset
 # from .knowns import KnownsDataset
 # from .tfidf_stats import get_tfidf_vectorizer
+print('hi')
 from .zsre import ZsreDataset
