@@ -1,0 +1,18 @@
+// import the Pdfcrowd API client
+import com.pdfcrowd.*;
+
+public void ConverAndDownload(String WebLink) {
+    try {
+        Pdfcrowd.HtmlToPdfClient client = new Pdfcrowd.HtmlToPdfClient("user", "apikey");
+
+        String OutputFilename = WebLink.substring(WebLink.lastIndexOf('/') + 1) + ".pdf";
+
+        client.convertUrlToFile(WebLink, OutputFilename);
+    }
+    catch(Pdfcrowd.Error e) {
+        System.err.println("Pdfcrowd Error: " + e.getMessage());
+    }
+    catch(IOException e) {
+        System.err.println("IO Error: " + e.getMessage());
+    }
+}
