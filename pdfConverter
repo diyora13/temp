@@ -1,0 +1,20 @@
+import java.io.InputStream;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+
+public class downloadWebPage {
+
+    public static void main(String[] args) {
+        String Url = args[0];
+        String outputFilePath = args[1];
+
+        try (InputStream in = new URL(Url).openStream()) 
+        {
+            Files.copy(in, Path.of(outputFilePath), StandardCopyOption.REPLACE_EXISTING);
+            System.out.println("Webpage downloaded successfully");
+        } catch (Exception e) {
+            e.printStackTrace(); }
+    }
+}
