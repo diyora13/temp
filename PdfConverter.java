@@ -1,8 +1,13 @@
 import com.pdfcrowd.HtmlToPdfClient;
+import com.pdfcrowd.View;
 import com.pdfcrowd.Error;
 
+
 public void converAndDownload(String WebLink) {
+    
     try {
+        Pdfcrowd.View WebView = new Pdfcrowd.View(WebLink);
+
         Pdfcrowd.HtmlToPdfClient client = new Pdfcrowd.HtmlToPdfClient("user", "apikey");
 
         String outputFilename = WebLink.substring(WebLink.lastIndexOf('/') + 1) + ".pdf";
