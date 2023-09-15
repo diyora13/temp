@@ -2,15 +2,14 @@ import com.pdfcrowd.HtmlToPdfClient;
 import com.pdfcrowd.View;
 import com.pdfcrowd.Error;
 
-
-public void converAndDownload(String WebLink) {
+public void ConverAndDownload(String webLink) {
     
     String Converted = "Yes";
     
     try {
         Pdfcrowd.HtmlToPdfClient client = new Pdfcrowd.HtmlToPdfClient("user", "apikey");
-        String outputFilename = WebLink.substring(WebLink.lastIndexOf('/') + 1) + ".pdf";
-        client.convertUrlToFile(WebLink, outputFilename);
+        String outputFilename = webLink.substring(WebLink.lastIndexOf('/') + 1) + ".pdf";
+        client.convertUrlToFile(webLink, outputFilename);
     }
     catch(Pdfcrowd.Error e){
         System.err.println("Pdfcrowd Error: " + e.getMessage());
