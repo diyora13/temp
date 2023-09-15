@@ -3,6 +3,7 @@ import java.io.*;
 
 import com.itextpdf.html2pdf.HtmlConverter;
 
+
 public class WebToPDF {
 
     public static String getHTML(String WebLink) throws IOException {
@@ -36,8 +37,9 @@ public class WebToPDF {
         
         String html = getHTML(WebLink);
 
-        FileOutputStream output = new FileOutputStream(fileName);
+        String createConnection = Getconnection("api-key", "value");
 
+        FileOutputStream output = new FileOutputStream(fileName);
 
         HtmlConverter.convertToPdf(html, output);
 
